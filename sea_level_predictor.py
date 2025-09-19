@@ -14,9 +14,9 @@ def draw_plot():
     # Create first line of best fit
     regr_all  = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
 
-    x_pred_all = np.arange(df['Year'].min(), 2051, 1)
+    x_pred_all = np.arange(df['Year'].min(), 2051, 1) # array de anos desde o início até 2050
 
-    y_pred_all = regr_all.slope * x_pred_all + regr_all.intercept
+    y_pred_all = regr_all.slope * x_pred_all + regr_all.intercept # calcula predição usando a equação da reta y = ax + b
 
     ax.plot(x_pred_all, y_pred_all, 'r', label='Best Fit Line (All Data)')
 
@@ -25,9 +25,9 @@ def draw_plot():
 
     regr_2 = linregress(df2['Year'], df2['CSIRO Adjusted Sea Level'])
 
-    x_pred_2 = np.arange(2000, 2051, 1)
+    x_pred_2 = np.arange(2000, 2051, 1) # array dos anos 2000 até 2050
 
-    y_pred_2 = regr_2.slope * x_pred_2 + regr_2.intercept
+    y_pred_2 = regr_2.slope * x_pred_2 + regr_2.intercept # calculo da predição com nova formula de regressão
 
     ax.plot(x_pred_2, y_pred_2, 'g', label='Best Fit Line (Since 2000)')
 
